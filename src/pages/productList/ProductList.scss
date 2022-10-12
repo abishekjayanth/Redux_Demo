@@ -1,0 +1,19 @@
+.product-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding: 30px;
+
+    div {
+        padding: 20px;
+        margin-bottom: 30px;
+        width: 40%;
+        border-radius: 5px;
+        -moz-box-shadow: 0 0 3px #ccc;
+        -webkit-box-shadow: 0 0 3px #ccc;
+        box-shadow: 0 0 13px 2px #ccc;
+        text-align: center;
+        cursor: pointer;
+    }
+}
