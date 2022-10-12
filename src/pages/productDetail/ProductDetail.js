@@ -11,12 +11,8 @@ export default function ProductDetail() {
     let productDetail = useSelector(store => store.products.selectedProduct)
 
     useEffect(() => {
-        (
-            async () => {
-                const result = await get(`/products/${productId}`)
-                dispatch(setSelectedProduct(result))
-            }
-        )()
+        dispatch(setSelectedProduct(productId))
+
         return () => {
             dispatch(removeSelectedProduct())
         };

@@ -1,17 +1,20 @@
 import { SELECTED_PRODUCTS, SET_PRODUCTS, REMOVE_SELECTED_PRODUCTS } from "../constants/actionTypes"
+import { get } from "../../services/http.svc"
 
-export const setProducts = (products) => {
-    return {
+export const setProducts = () => async (dispatch) => {
+    const result = await get('/products')
+    dispatch({
         type: SET_PRODUCTS,
-        payload: products
-    }
+        payload: result
+    })
 }
 
-export const setSelectedProduct = (product) => {
-    return {
+export const setSelectedProduct = (productId) => async (dispatch) => {
+    const result = await get(`/products/${productId}`)
+    dispatch({
         type: SELECTED_PRODUCTS,
-        payload: product
-    }
+        payload: result
+    })
 }
 
 export const removeSelectedProduct = () => {
